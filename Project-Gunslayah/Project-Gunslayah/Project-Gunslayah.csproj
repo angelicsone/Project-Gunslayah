@@ -212,6 +212,10 @@
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="GunSlayah Forum.aspx" />
+    <Content Include="Images\chickenrice.jpg" />
+    <Content Include="Images\kobebeef.jpg" />
+    <Content Include="Images\nasilemak.jpg" />
+    <Content Include="Images\porterhouse.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
