@@ -45,5 +45,8 @@
                     <img width="100" height="100" src="../Images/porterhouse.jpg" />
                 </div>
             </div>
+            <asp:Panel ID="Panel2" runat="server">
+            </asp:Panel>       
         </div>
+    <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Gunslayah Forum2.aspx" text="Go to Page 2" runat="server"></asp:HyperLink>
 </asp:Content>

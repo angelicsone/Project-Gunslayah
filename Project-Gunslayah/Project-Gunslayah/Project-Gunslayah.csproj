@@ -212,6 +212,7 @@
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="GunSlayah Forum.aspx" />
+    <Content Include="Gunslayah Forum2.aspx" />
     <Content Include="Images\chickenrice.jpg" />
     <Content Include="Images\kobebeef.jpg" />
     <Content Include="Images\nasilemak.jpg" />
@@ -403,6 +404,13 @@
     </Compile>
     <Compile Include="GunSlayah Forum.aspx.designer.cs">
       <DependentUpon>GunSlayah Forum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gunslayah Forum2.aspx.cs">
+      <DependentUpon>Gunslayah Forum2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gunslayah Forum2.aspx.designer.cs">
+      <DependentUpon>Gunslayah Forum2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
