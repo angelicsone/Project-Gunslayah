@@ -46,7 +46,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <li class="label label-info">
+                    <li class="label label-info glyphicon glyphicon-home">
                     <a class="navbar-brand" runat="server" href="Default.aspx">GunSlayah</a>
                     </li>
                 </div>
