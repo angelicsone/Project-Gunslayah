@@ -1,39 +1,39 @@
 ﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Project_Gunslayah.Account.Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %>.</h2>
-    <p class="text-danger">
-        <asp:Literal runat="server" ID="ErrorMessage" />
-    </p>
-
-    <div class="form-horizontal">
-        <h4>Create a new account</h4>
+    <h2><%: Title %></h2>
+    <div class="form-horizontal">   
+        <h4 >Create a new account</h4>
         <hr />
-        <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="email" CssClass="col-md-2 control-label">Email</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                    CssClass="text-danger" ErrorMessage="The email field is required." />
+                <asp:TextBox runat="server" autocomplete="off" ID="email" CssClass="form-control" TextMode="Email" />
+                <asp:RequiredFieldValidator runat="server" Display="Dynamic" ControlToValidate="email" ForeColor="red" ErrorMessage="This field is required." />
+                <asp:RegularExpressionValidator runat="server" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="Email" ForeColor="red" ErrorMessage="Invalid email address."/>       
             </div>
         </div>
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="username" CssClass="col-md-2 control-label">Username</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
-                    CssClass="text-danger" ErrorMessage="The password field is required." />
+                <asp:TextBox runat="server" autocomplete="off" ID="username" CssClass="form-control"/>
+                <asp:RequiredFieldValidator ForeColor="red" ErrorMessage="Required" ControlToValidate="username" runat="server" />
             </div>
         </div>
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="password" CssClass="col-md-2 control-label">Password</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
-                <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
+                <asp:TextBox runat="server" autocomplete="off" ID="password" TextMode="Password" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" Display="Dynamic" ControlToValidate="password" ForeColor="red" ErrorMessage="This field is required." />
+                <asp:RegularExpressionValidator runat="server" Display="Dynamic" ControlToValidate="password" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" ForeColor="red" ErrorMessage="Password requirements not fulfilled."/>
+            </div>
+        </div>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="confirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" autocomplete="off" ID="confirmPassword" TextMode="Password" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword" Display="Dynamic" ForeColor="red" ErrorMessage="This field is required." />
+                <asp:CompareValidator runat="server" ControlToCompare="password" ControlToValidate="confirmPassword" Display="Dynamic" ErrorMessage="Password do not match." Forecolor ="red"/>
             </div>
         </div>
         <div class="form-group">
@@ -41,5 +41,10 @@
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
+        <asp:Label ID="MessageBox" runat="server"></asp:Label>
+        <hr />
+        <asp:Label ID="Signin" runat="server">Have an account?</asp:Label>&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="GoToLogin" NavigateUrl="Login.aspx" Text="Log in" runat="server"/><br />
+        <asp:Label ID="passwordPolicy" runat="server">Our password policy:</asp:Label> &nbsp;&nbsp;&nbsp;<asp:HyperLink ID="GoToFAQ" NavigateUrl="~/FAQ.aspx" Text="For more info.." runat="server"/><!--Link to stanley faq page -->
+   
     </div>
 </asp:Content>

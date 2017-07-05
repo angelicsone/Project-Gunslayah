@@ -6,6 +6,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using Project_Gunslayah.Models;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Text;
+using System.Security.Cryptography;
+using System.Drawing;
 
 namespace Project_Gunslayah.Account
 {
@@ -13,23 +18,53 @@ namespace Project_Gunslayah.Account
     {
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
-            IdentityResult result = manager.Create(user, Password.Text);
-            if (result.Succeeded)
+            int userId = 0;
+            string constr = ConfigurationManager.ConnectionStrings["ForumDatabase"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
             {
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                //string code = manager.GenerateEmailConfirmationToken(user.Id);
-                //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
-                //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
+                using (SqlCommand cmd = new SqlCommand("insert into Users (username,password,email) VALUES (@username,@password,@email)"))
+                {
+                    byte[] bytespass = Encoding.Unicode.GetBytes(password.Text);
+                    SHA256Managed hashstringpass = new SHA256Managed();
+                    byte[] hashpass = hashstringpass.ComputeHash(bytespass);
+                    string hashStringpass = string.Empty;
+                    foreach (byte x in hashpass)
+                    {
+                        hashStringpass += string.Format("{0:x2}", x);
+                    }
 
-                signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-            }
-            else 
-            {
-                ErrorMessage.Text = result.Errors.FirstOrDefault();
+                    using (SqlDataAdapter sda = new SqlDataAdapter())
+                    {
+
+                        cmd.Parameters.AddWithValue("@username", username.Text.Trim());
+                        cmd.Parameters.AddWithValue("@password", hashStringpass);
+                        cmd.Parameters.AddWithValue("@email", email.Text.Trim());
+
+                        cmd.Connection = con;
+                        con.Open();
+
+                        con.Close();
+                    }
+                }
+                string message = string.Empty;
+                switch (userId)
+                {
+                    case -1:
+                        MessageBox.ForeColor = Color.Red;
+                        MessageBox.Text = "Username already exists.\\nPlease choose a different username.";
+                        break;
+                    case -2:
+                        MessageBox.ForeColor = Color.Red;
+                        MessageBox.Text = "Email address has already been used.";
+                        break;
+                    case -3:
+                        MessageBox.ForeColor = Color.Red;
+                        MessageBox.Text = "Username cannot be the same as password.";
+                        break;
+             
+                      
+                }
+                string messageSuccess = "Registration successful.\\nActivation code has been sent.";
             }
         }
     }
