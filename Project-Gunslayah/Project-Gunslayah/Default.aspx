@@ -2,10 +2,56 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="GunSlayah Forum.aspx" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <div id="toptron" class="jumbotron">
+        <div class="topLeft">
+            <h1>GunSlayah</h1>
+            <h5>~View Our Gun Slayah Forum for a variety of delicous cuisines~</h5>
+            <a class="btn btn-info" href="GunSlayah Forum.aspx">Enter GunSlayah Forum &raquo;</a>
+        </div>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                 <li data-target="#myCarousel" data-slide-to="2"></li>
+                 <li data-target="#myCarousel" data-slide-to="3"></li>
+                 <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img style="width: 50%; height: 250px; margin: auto;" src="Images/chickenrice.jpg" />
+                </div>
+
+                <div class="item">
+                    <img style="width: 50%; height: 250px; margin: auto;" src="Images/Roland-Restaurant.jpg" />
+                </div>
+
+                <div class="item">
+                    <img style="width: 50%; height: 250px; margin: auto;" src="Images/Penang asam laksa.jpg" />
+                </div>
+
+                <div class="item">
+                    <img style="width: 50%; height: 250px; margin: auto;" src="Images/fish.jpg" />
+                </div>
+
+                <div class="item">
+                    <img style="width: 50%; height: 250px; margin: auto;" src="Images/steak.jpg" />
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
 
     <div class="row">
