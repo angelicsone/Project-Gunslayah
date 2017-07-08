@@ -69,12 +69,23 @@ namespace Project_Gunslayah
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+        
+            if (Session["Username"] != null)
+            {
+                SessionName.Text = Session["Username"].ToString();
+            }
+            else
+            {
+               
+            }
         }
+    
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Session.Remove("Username");
+            Session.RemoveAll();
         }
     }
 
