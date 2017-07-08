@@ -215,11 +215,14 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="GunSlayah Forum.aspx" />
     <Content Include="Gunslayah Forum2.aspx" />
+    <Content Include="Images\burger.jpg" />
     <Content Include="Images\chickenrice.jpg" />
     <Content Include="Images\fish.jpg" />
+    <Content Include="Images\hotdog.jpg" />
     <Content Include="Images\kobebeef.jpg" />
     <Content Include="Images\nasilemak.jpg" />
     <Content Include="Images\Penang asam laksa.JPG" />
+    <Content Include="Images\pizza.jpg" />
     <Content Include="Images\porterhouse.jpg" />
     <Content Include="Images\Roland-Restaurant.jpg" />
     <Content Include="Images\steak.jpg" />
