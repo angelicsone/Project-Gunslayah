@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using SpeechLib;
 
 namespace Project_Gunslayah
 {
@@ -14,8 +15,12 @@ namespace Project_Gunslayah
             if (IsPostBack)
             {
                 string searchTerm = transcript.Text;
-                Response.Write(searchTerm);
-                Response.Redirect("https://www.google.com/search?q="+searchTerm);
+                //Response.Write(searchTerm);
+                //Response.Redirect("https://www.google.com/search?q=" + searchTerm);
+
+
+                SpVoice voice = new SpVoice();
+                voice.Speak("Here are the search results of" +searchTerm);
             }
             else
             {
