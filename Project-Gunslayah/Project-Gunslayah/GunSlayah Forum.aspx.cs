@@ -11,10 +11,16 @@ namespace Project_Gunslayah
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack)
+            {
+                string searchTerm = transcript.Text;
+                Response.Write(searchTerm);
+                Response.Redirect("https://www.google.com/search?q="+searchTerm);
+            }
+            else
+            {
+                
+            }
         }
-
-
-
     }
 }
