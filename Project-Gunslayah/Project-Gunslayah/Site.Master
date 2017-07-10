@@ -13,8 +13,16 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-</head>
+    </head>
+<style>
+    
+    ul {background:rgba(192,19,0,0.5);box-shadow: 10px 10px 100px #000;}
+    ul li {display:inline-block;}
+    ul li {color:#FFF; font-family:"Trebuchet MS",  Arial, Helvetica, sans-serif;}
+    body {
+        background: url(Images/background.jpg) no-repeat fixed;background-size:100% 100%;
+    }
+</style>
 <body>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -46,14 +54,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <li class="label label-info glyphicon glyphicon-home">
-                    <a class="navbar-brand" runat="server" href="Default.aspx">GunSlayah</a>
+                   
+                    <a class="navbar-brand" runat="server" href="GunSlayah Homepage.aspx">GunSlayah</a>
                     </li>
                 </div>
                 <asp:Label runat="server" class="navbar-brand" ID="SessionName"></asp:Label>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="GunSlayah Homepage.aspx">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
@@ -89,7 +97,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Project GunSlayah 🔫</p>
             </footer>
         </div>
     </form>

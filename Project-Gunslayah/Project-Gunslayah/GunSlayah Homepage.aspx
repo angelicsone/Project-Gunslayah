@@ -1,13 +1,17 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Project_Gunslayah._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GunSlayah Homepage.aspx.cs" Inherits="Project_Gunslayah._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div id="toptron" class="jumbotron">
+        <div class="page header">
+                        <img src="Images/gunslayah.jpg" style="max-width:200px;" />
+                    </div>
         <div class="topLeft">
-            <h1>GunSlayah</h1>
+            
             <h5>~View Our Gun Slayah Forum for a variety of delicous cuisines~</h5>
             <a class="btn btn-info" href="GunSlayah Forum.aspx">Enter GunSlayah Forum &raquo;</a>
         </div>
+        
         <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -56,31 +60,30 @@
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
+            <h2>Restaurant</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                Explore over 60 restaurants, offering the best of local and international cuisines in one convenient dining destination. Discover exclusive culinary creations by ten of the world’s best celebrity chef restaurants. And don't miss the exciting dining and nightlife events happening this month at Marina Bay Sands.
             </p>
             <p>
-                <a class="btn btn-default" href="GunSlayah Forum.aspx">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                <a class="btn btn-default" href="GunSlayah Forum.aspx">SEE DETAILS &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
+            <h2>WINE DINNERS AND PROMOTIONS</h2>
             <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+               Discover the art of wine appreciation with exclusive tasting events and tempting offers.
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">SEE DETAILS &raquo;</a>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Private Events</h2>
+            <p>
+                Be it for business or pleasure, make your next private dining event more than memorable.
+            </p>
+            <p>
+                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">SEE DETAILS &raquo;</a>
             </p>
         </div>
     </div>

@@ -217,6 +217,7 @@
     <Content Include="Gunslayah Forum2.aspx" />
     <Content Include="Images\burger.jpg" />
     <Content Include="Images\chickenrice.jpg" />
+    <Content Include="Images\gunslayah.jpg" />
     <Content Include="Images\fish.jpg" />
     <Content Include="Images\hotdog.jpg" />
     <Content Include="Images\kobebeef.jpg" />
@@ -226,6 +227,7 @@
     <Content Include="Images\porterhouse.jpg" />
     <Content Include="Images\Roland-Restaurant.jpg" />
     <Content Include="Images\steak.jpg" />
+    <Content Include="Images\background.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -255,7 +257,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Default.aspx" />
+    <Content Include="GunSlayah Homepage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
@@ -413,12 +415,12 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="GunSlayah Homepage.aspx.cs">
+      <DependentUpon>GunSlayah Homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="GunSlayah Homepage.aspx.designer.cs">
+      <DependentUpon>GunSlayah Homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
