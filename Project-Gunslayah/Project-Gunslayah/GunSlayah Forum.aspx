@@ -6,7 +6,7 @@
     <!-- CSS Styles -->
     <style>
         .speech {
-            border: 1px solid #DDD;
+            border: 3px solid #020202;
             width: 300px;
             padding: 0;
             margin: 0;
