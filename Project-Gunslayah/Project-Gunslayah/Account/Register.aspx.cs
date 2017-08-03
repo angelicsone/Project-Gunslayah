@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using Project_Gunslayah.Models;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Text;
@@ -16,19 +11,25 @@ using System.Net.Mail;
 using System.Web.Configuration;
 using System.Net.Configuration;
 using System.Net;
+using static VoiceIt;
 
 namespace Project_Gunslayah.Account
 {
+
     public partial class Register : Page
     {
+
+
+
         protected void CreateUser_Click(object sender, EventArgs e)
         {
+
             int userId = 0;
             string constr = ConfigurationManager.ConnectionStrings["VoiceProjectdb"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("Insert_User"))
-               
+
                 {
                     byte[] bytespass = Encoding.Unicode.GetBytes(password.Text);
                     SHA256Managed hashstringpass = new SHA256Managed();
@@ -68,16 +69,16 @@ namespace Project_Gunslayah.Account
                         MessageBox.Text = "Username cannot be the same as password.";
                         break;
                     default:
-                        SendActivationEmail(userId);
+                        SignUpAndEmail(userId);
+                        string messageSuccess = "Registration successful.\\nActivation code has been sent.";
+                        Page.ClientScript.RegisterStartupScript(GetType(), "Scripts", "<script>alert('" + messageSuccess + "');window.location ='../Account/Activation.aspx?username=" + username.Text + "&email=" + email.Text + "';</script>");
                         break;
 
                 }
 
-                string messageSuccess = "Registration successful.\\nActivation code has been sent.";
-                Page.ClientScript.RegisterStartupScript(GetType(), "Scripts", "<script>alert('" + messageSuccess + "');window.location ='../Account/Activation.aspx?username=" + username.Text + "&email=" + email.Text + "';</script>");
             }
         }
-        private void SendActivationEmail(int userId)
+        private void SignUpAndEmail(int userId)
         {
             string constr = ConfigurationManager.ConnectionStrings["VoiceProjectdb"].ConnectionString;
             string actCode = otp();
@@ -126,6 +127,7 @@ namespace Project_Gunslayah.Account
                     catch (Exception ex)
                     {
                         MessageBox.Text = ex.ToString();
+                        throw ex;
                     }
                 }
             }

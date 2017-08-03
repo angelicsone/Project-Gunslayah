@@ -67,6 +67,13 @@
         }
     </script>
     <br />
+    <asp:Table class="table table-hover" runat="server" ID="ThreadsTable">
+       <asp:TableRow>
+
+           <asp:TableHeaderCell Width="70%">Thread</asp:TableHeaderCell>
+          
+            </asp:TableRow>
+           </asp:Table>
     <div class="panel panel-info">
         <div class="panel-heading">Chicken Rice</div>
         <div class="panel-body">
