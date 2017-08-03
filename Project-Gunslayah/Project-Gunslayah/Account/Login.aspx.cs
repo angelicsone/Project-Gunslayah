@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Web;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using Project_Gunslayah.Models;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
@@ -13,15 +8,17 @@ using System.Net;
 using System.Text;
 using System.Web.Security;
 using System.Security.Cryptography;
-using System.Drawing;
+using System.Web.Script.Serialization;
+using System.Collections.Generic;
+using static VoiceIt;
 
 namespace Project_Gunslayah.Account
 {
     public partial class Login : Page
     {
+        VoiceIt myVoiceIt = new VoiceIt("fa9a2ca3ca3045a9a4641128d9a059b4");
         protected void Page_Load(object sender, EventArgs e)
         {
-           
 
 
         }
@@ -33,7 +30,7 @@ namespace Project_Gunslayah.Account
             public string actCode { get; set; }
             public string password { get; set; }
             public string email { get; set; }
-
+            public bool voiceactivated { get; set; }
         }
 
         public Person getUser(string username)
@@ -54,6 +51,7 @@ namespace Project_Gunslayah.Account
                         matchingPerson.username = oReader["username"].ToString();
                         matchingPerson.email = oReader["email"].ToString();
                         matchingPerson.password = oReader["password"].ToString();
+                        matchingPerson.voiceactivated = (bool)oReader["voiceActivated"];
                     }
                     con.Close();
                 }
@@ -180,9 +178,6 @@ namespace Project_Gunslayah.Account
                     }
                 }
             }
-              
-
-
             else
             {
                 using (SqlConnection con = new SqlConnection(constr))
@@ -214,31 +209,66 @@ namespace Project_Gunslayah.Account
 
                 if (matchingPerson.password == hashStringpass)
                 {
-                    Session["Username"] = Username.Text;
-                    //Session.Timeout = 1;                   
+                    if (matchingPerson.voiceactivated)
+                    {
+                        Session["Username"] = Username.Text;
+                        //Session.Timeout = 1;                   
                         FormsAuthentication.SetAuthCookie(Session["Username"].ToString(), true);
 
                         if (Session["prev"] == null)
                         {
-                            Response.Redirect("~/Default.aspx");
+                            Response.Redirect("~/GunSlayah Homepage.aspx");
                         }
                         else
                         {
                             //Response.Redirect(Session["prev"].ToString());
                         }
-
                     }
-                
+                    else
+                    {
+                        string alert = "";
+                        string response = myVoiceIt.getUser(matchingPerson.username, Password.Text);
+                        var jsonresponse = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(response);
+                        switch (jsonresponse["ResponseCode"])
+                        {
+                            case "UNF":
+                                ClientScript.RegisterClientScriptBlock(GetType(), "TestScript", "window.alert('VoiceIt user does not exist. Attempting to create account');", true);
+                                string signUpResponse = myVoiceIt.createUser(matchingPerson.username, Password.Text);
+                                var jsonSignUpResponse = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(signUpResponse);
+                                switch (jsonSignUpResponse["ResponseCode"])
+                                {
+
+                                    case "SUC":
+                                        ClientScript.RegisterClientScriptBlock(GetType(), "TestScript", "window.alert('Successfully created account.');", true);
+
+                                        break;
+                                    case "IFP":
+                                        ClientScript.RegisterClientScriptBlock(GetType(), "TestScript", "window.alert('Incorrect formatted password.');", true);
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                break;
+                            case "SUC":
+                                ClientScript.RegisterClientScriptBlock(GetType(), "TestScript", "window.alert('VoiceIt user does not exist. Attempting to create account');", true);
+                                //TODO: Make user authenticate using voice by redirecting to another page or implementing voice authentication in the same page
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+
                 else
                 {
                     string message = "Invalid Username or Password.";
-                    Page.ClientScript.RegisterStartupScript(GetType(), "Scripts", "<script>alert('" + message + "');");
+                    Page.ClientScript.RegisterStartupScript(GetType(), "Scripts", "<script>alert('" + message + "');</script>");
                 }
-           
+
 
             }
         }
-       
+
     }
 
 

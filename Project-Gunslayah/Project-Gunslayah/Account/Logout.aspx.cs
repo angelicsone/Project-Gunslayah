@@ -15,7 +15,7 @@ namespace Project_Gunslayah.Account
             FormsAuthentication.SignOut();
             Session.Remove("Username");
             Session.RemoveAll();
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("~/GunSlayah Homepage.aspx");
         }
     }
 }

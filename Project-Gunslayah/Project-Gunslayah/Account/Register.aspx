@@ -41,6 +41,7 @@
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
+        
         <asp:Label ID="MessageBox" runat="server"></asp:Label>
         <hr />
         <asp:Label ID="Signin" runat="server">Have an account?</asp:Label>&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="GoToLogin" NavigateUrl="Login.aspx" Text="Log in" runat="server"/><br />

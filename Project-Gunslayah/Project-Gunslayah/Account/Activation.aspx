@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Activation.aspx.cs" Inherits="Project_Gunslayah.Account.Activation" %>
+﻿<%@ Page Title="Activation" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Activation.aspx.cs" Inherits="Project_Gunslayah.Account.Activation" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
  <div id="msform">
     <!-- fieldsets -->
