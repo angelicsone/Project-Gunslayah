@@ -14,14 +14,15 @@
 
             .speech input {
                 border: 0;
-                width: 240px;
+                width: 254px;
                 display: inline-block;
-                height: 30px;
+                height: 40px;
             }
 
             .speech img {
                 float: right;
                 width: 40px;
+                background-color: aqua;
             }
     </style>
 
