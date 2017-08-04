@@ -79,10 +79,5 @@ C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslaya
 C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\obj\Debug\Project-Gunslayah.pdb
 C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\obj\Debug\Interop.SpeechLib.dll
 C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\obj\Debug\Project-Gunslayah.csproj.ResolveComReference.cache
-C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\bin\Microsoft.IdentityModel.Logging.dll
-C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\bin\Microsoft.IdentityModel.Tokens.dll
-C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\bin\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\bin\Twilio.dll
-C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\bin\Microsoft.IdentityModel.Tokens.xml
-C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\bin\System.IdentityModel.Tokens.Jwt.xml
-C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\bin\Twilio.xml
+C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\bin\NAudio.dll
+C:\Users\hidan\Source\Repos\Project-Gunslayah\Project-Gunslayah\Project-Gunslayah\bin\NAudio.xml

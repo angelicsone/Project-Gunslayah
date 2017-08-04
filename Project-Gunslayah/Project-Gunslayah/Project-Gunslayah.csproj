@@ -233,6 +233,7 @@
     <Content Include="Images\Roland-Restaurant.jpg" />
     <Content Include="Images\steak.jpg" />
     <Content Include="Images\background.jpg" />
+    <Content Include="recorderWorker.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -267,6 +268,11 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="VoiceRecorder\app.js" />
+    <Content Include="VoiceRecorder\mediaDevices-getUserMedia-polyfill.js" />
+    <Content Include="VoiceRecorder\respond.js" />
+    <Content Include="VoiceRecorder\save.js" />
+    <Content Include="VoiceRecording.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -476,6 +482,13 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
     <Compile Include="VoiceIt\VoiceIt.cs" />
+    <Compile Include="VoiceRecording.aspx.cs">
+      <DependentUpon>VoiceRecording.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VoiceRecording.aspx.designer.cs">
+      <DependentUpon>VoiceRecording.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

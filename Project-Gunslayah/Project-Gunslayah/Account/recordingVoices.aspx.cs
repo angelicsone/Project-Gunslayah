@@ -10,6 +10,6 @@ namespace Project_Gunslayah.Account
         {
 
         }
-        string response = myVoiceIt.getUser(matchingPerson.username, Password.Text);
+       
     }
 }
