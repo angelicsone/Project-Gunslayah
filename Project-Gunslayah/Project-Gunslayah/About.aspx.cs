@@ -15,7 +15,7 @@ namespace Project_Gunslayah
 
             
 
-            var myVoiceIt = new VoiceIt("1d6361f81f3047ca8b0c0332ac0fb17d");
+          
 
             /* Now myVoiceIt is an instance of the VoiceIt class and can be used to make various different API Calls, as documented below. */
         }

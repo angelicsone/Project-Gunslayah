@@ -57,7 +57,7 @@
             </a>
         </div>
     </div>
-
+    <a href="Account/recordingVoices.aspx">Click here</a>
     <div class="row">
         <div class="col-md-4">
             <h2>Restaurant</h2>
