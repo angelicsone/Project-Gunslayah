@@ -58,7 +58,8 @@ if (navigator.mediaDevices.getUserMedia) {
       var clipContainer = document.createElement('article');
       var clipLabel = document.createElement('p');
       var audio = document.createElement('audio');
-      var deleteButton = document.createElement('button');
+     
+      var deleteButton = document.createElement('button');io
      
       clipContainer.classList.add('clip');
       audio.setAttribute('controls', '');
@@ -77,7 +78,7 @@ if (navigator.mediaDevices.getUserMedia) {
       soundClips.appendChild(clipContainer);
 
       audio.controls = true;
-      var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+      var blob = new Blob(chunks, { 'type' : 'audio/wav; codecs=opus' });
       chunks = [];
       var audioURL = window.URL.createObjectURL(blob);
       audio.src = audioURL;
