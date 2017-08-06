@@ -14,7 +14,7 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     </head>
-<style>
+<%--<style>
     
     ul {background:rgba(192,19,0,0.5);box-shadow: 10px 10px 100px #000;}
     ul li {display:inline-block;}
@@ -22,7 +22,7 @@
     body {
         background: url(~/Images/background.jpg) no-repeat fixed;background-size:100% 100%;
     }
-</style>
+</style>--%>
 <body>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -56,7 +56,7 @@
                     </button>
                    
                     <a class="navbar-brand" runat="server" href="GunSlayah Homepage.aspx">GunSlayah</a>
-                    </li>
+                   
                 </div>
                 <asp:Label runat="server" class="navbar-brand" ID="SessionName"></asp:Label>
                 <div class="navbar-collapse collapse">

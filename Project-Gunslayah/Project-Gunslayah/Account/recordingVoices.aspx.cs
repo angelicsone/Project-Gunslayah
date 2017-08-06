@@ -2,6 +2,7 @@
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
@@ -17,7 +18,9 @@ namespace Project_Gunslayah.Account
         {
 
         }
+
         VoiceIt myVoiceIt = new VoiceIt("fa9a2ca3ca3045a9a4641128d9a059b4");
+
         public class Person
         {
             public string username { get; set; }
@@ -45,10 +48,10 @@ namespace Project_Gunslayah.Account
 
         protected void voiceEnrollment1(object sender, EventArgs e)
         {
-            var response = myVoiceIt.createEnrollment("huff", "Asdf1234", "C:/MyWavFile/test1.wav", "en-US");
-        }
+            var response = myVoiceIt.createEnrollment("ericyeap", "A123456z", "C:/MyWavFile/test6.wav", "en-US");
 
-    
+
+        }
     }
 }
 
