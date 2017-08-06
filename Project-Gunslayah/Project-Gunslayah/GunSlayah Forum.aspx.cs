@@ -18,12 +18,12 @@ namespace Project_Gunslayah
             if (IsPostBack)
             {
                 string searchTerm = transcript.Text;
-                //Response.Write(searchTerm);
-                //Response.Redirect("https://www.google.com/search?q=" + searchTerm);
+                Response.Write(searchTerm);
+                Response.Redirect("https://www.google.com/search?q=" + searchTerm);
 
 
-                SpVoice voice = new SpVoice();
-                voice.Speak("Here are the search results of" + searchTerm);
+                // SpVoice voice = new SpVoice();
+                //voice.Speak("Here are the search results of" + searchTerm);
             }
             else
             {
@@ -37,6 +37,8 @@ namespace Project_Gunslayah
             //conn.ConnectionString = constr;
             //conn.Open();
         }
+
+       
         //    //SqlCommand cmd = new SqlCommand("SELECT * FROM SubTopic", conn);
         //    cmd.CommandType = CommandType.Text;
         //    SqlDataAdapter da = new SqlDataAdapter();
@@ -129,5 +131,7 @@ namespace Project_Gunslayah
         //        Response.Redirect("SearchResults.aspx?searchTerm=" + searchDesc);
         //    }
         //}
+
     }
+
 }
